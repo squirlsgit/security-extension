@@ -17,7 +17,15 @@ module Devise
   # Number of old passwords in archive
   mattr_accessor :password_archiving_count
   @@password_archiving_count = 5
+  
+  # Min age of keepable passwords
+  mattr_accessor :password_archiving_min_age
+  @@password_archiving_min_count = nil
 
+  # Max age of keepable passwords
+  mattr_accessor :password_archiving_max_age
+  @@password_archiving_max_age = 31500000
+  
   # Deny old password (true, false, count)
   mattr_accessor :deny_old_passwords
   @@deny_old_passwords = true

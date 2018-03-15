@@ -10,6 +10,14 @@ Devise.setup do |config|
 
   # How many passwords to keep in archive
   # config.password_archiving_count = 5
+  
+  # Minimum age of keepable passwords seconds 172800
+  # config.password_archiving_min_age = 60
+  # Maximum age of keepable passwords seconds 31500000
+  # config.password_archiving_max_age = 120
+ 
+  # Deny old password (true, false, count)
+  # config.deny_old_passwords = true
 
   # Deny old password (true, false, count)
   # config.deny_old_passwords = true
