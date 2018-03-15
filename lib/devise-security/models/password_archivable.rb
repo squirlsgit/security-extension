@@ -23,9 +23,16 @@ module Devise
             self.deny_old_passwords = 0
           end
         end
-
+        logger.debug "#PASSWORD_ARCHIVE_INCLUDED? updating password backlog. remember #{self.class.deny_old_passwords} passwords dated up to #{archive_datetime}archive_datetime"
         if self.class.deny_old_passwords > 0 && !self.password.nil?
           old_passwords_including_cur_change = self.old_passwords.order(:id).reverse_order.limit(self.class.deny_old_passwords).to_a
+          old_passwords_including_cur_change << OldPassword.new(old_password_params)  # include most recent change in list, but don't save it yet!
+          old_passwords_including_cur_change.each do |old_password|
+            dummy                    = self.class.new
+            dummy.encrypted_password = old_password.encrypted_password
+            return true if dummy.valid_password?(password)
+          end
+          old_passwords_including_cur_change = self.old_passwords.order(:id).reverse_order.to_a
           old_passwords_including_cur_change << OldPassword.new(old_password_params)  # include most recent change in list, but don't save it yet!
           old_passwords_including_cur_change.each do |old_password|
             dummy                    = self.class.new
@@ -49,7 +56,9 @@ module Devise
       def deny_old_passwords=(count)
         self.class.deny_old_passwords = count
       end
-
+      def arhive_datetime
+        self.class.password_archiving_datetime
+      end
       def archive_count
         self.class.password_archiving_count
       end
