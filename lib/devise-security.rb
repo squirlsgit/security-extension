@@ -18,6 +18,10 @@ module Devise
   mattr_accessor :password_archiving_count
   @@password_archiving_count = 5
   
+  #remember passwords
+  mattr_accessor :password_archiving_remember
+  @@password_archiving_remember = 0
+
   # Min age of keepable passwords
   mattr_accessor :password_archiving_min_age
   @@password_archiving_min_count = nil

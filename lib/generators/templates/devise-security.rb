@@ -10,7 +10,8 @@ Devise.setup do |config|
 
   # How many passwords to keep in archive
   # config.password_archiving_count = 5
-  
+  # remember passwords
+  # config.password_archiving_remember = 1
   # Minimum age of keepable passwords seconds 172800
   # config.password_archiving_min_age = 60
   # Maximum age of keepable passwords seconds 31500000
