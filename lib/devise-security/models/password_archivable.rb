@@ -63,7 +63,7 @@ module Devise
       def archive_min_age
         self.class.password_archiving_min_age
       end
-      def arhive_max_age
+      def archive_max_age
         self.class.password_archiving_max_age
       end
       def archive_count
