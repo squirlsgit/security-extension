@@ -32,7 +32,7 @@ module Devise
        logger.debug "concatenating password #{t.created_at}"
        old_passwords_including_cur_change.push(t) if (DateTime.now.utc - t.created_at < archive_max_age && DateTime.now.utc - t.created_at > archive_min_age)
     end
-	elsif self.class.deny_old_passwords > 0 && !self.password.nil?
+	elsif self.class.deny_old_passwords > 0 && !self.password.nil? && temp.length > 0
     old_passwords_including_cur_change << temp
 	  old_passwords_including_cur_change = old_passwords_including_cur_change.take(self.class.deny_old_passwords)
   end

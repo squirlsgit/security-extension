@@ -15,11 +15,11 @@ Gem::Specification.new do |s|
   s.homepage = "https://github.com/devise-security/devise-security".freeze
   s.licenses = ["MIT".freeze]
   s.required_ruby_version = Gem::Requirement.new(">= 2.2.2".freeze)
-  s.rubygems_version = "2.6.13".freeze
+  s.rubygems_version = "2.7.6".freeze
   s.summary = "Security extension for devise".freeze
   s.test_files = ["test/dummy/Rakefile".freeze, "test/dummy/app/controllers/application_controller.rb".freeze, "test/dummy/app/controllers/captcha/sessions_controller.rb".freeze, "test/dummy/app/controllers/foos_controller.rb".freeze, "test/dummy/app/controllers/security_question/unlocks_controller.rb".freeze, "test/dummy/app/models/.gitkeep".freeze, "test/dummy/app/models/captcha_user.rb".freeze, "test/dummy/app/models/secure_user.rb".freeze, "test/dummy/app/models/security_question_user.rb".freeze, "test/dummy/app/models/user.rb".freeze, "test/dummy/app/views/foos/index.html.erb".freeze, "test/dummy/config.ru".freeze, "test/dummy/config/application.rb".freeze, "test/dummy/config/boot.rb".freeze, "test/dummy/config/database.yml".freeze, "test/dummy/config/environment.rb".freeze, "test/dummy/config/environments/test.rb".freeze, "test/dummy/config/initializers/devise.rb".freeze, "test/dummy/config/initializers/migration_class.rb".freeze, "test/dummy/config/routes.rb".freeze, "test/dummy/config/secrets.yml".freeze, "test/dummy/db/migrate/20120508165529_create_tables.rb".freeze, "test/dummy/db/migrate/20150402165590_add_verification_columns.rb".freeze, "test/dummy/db/migrate/20150407162345_add_verification_attempt_column.rb".freeze, "test/dummy/db/migrate/20160320162345_add_security_questions_fields.rb".freeze, "test/test_captcha_controller.rb".freeze, "test/test_helper.rb".freeze, "test/test_install_generator.rb".freeze, "test/test_paranoid_verification.rb".freeze, "test/test_password_archivable.rb".freeze, "test/test_password_expirable.rb".freeze, "test/test_password_expired_controller.rb".freeze, "test/test_secure_validatable.rb".freeze, "test/test_security_question_controller.rb".freeze]
 
-  s.installed_by_version = "2.6.13" if s.respond_to? :installed_by_version
+  s.installed_by_version = "2.7.6" if s.respond_to? :installed_by_version
 
   if s.respond_to? :specification_version then
     s.specification_version = 4
